@@ -23,7 +23,7 @@ Create well-structured, technical blog posts as standalone HTML files in the `po
 - **Technical writing**: Writes clear, developer-focused content with code examples
 - **Proper HTML structure**: Uses semantic HTML5 with proper headings, paragraphs, code blocks
 - **Code formatting**: Includes syntax-highlighted code examples using `<pre><code>` blocks
-- **Consistent style**: Follows simple, minimal design matching the site architecture
+- **Consistent style**: Uses shared `style.css` stylesheet for consistent design across all pages
 
 ## Input Requirements
 
@@ -62,8 +62,8 @@ Provide one or more of:
 ## Technical Constraints
 
 - Pure HTML files only (no templating, no preprocessing)
-- Minimal inline CSS or external stylesheet references
-- Self-contained pages (no shared layouts)
+- **Must link to shared stylesheet**: `<link rel="stylesheet" href="../style.css" />` in the `<head>`
+- **Do not use inline styles**: All styling comes from `style.css`
 - Files placed directly in `posts/` directory
 - Relative paths for any linked assets
 
@@ -76,6 +76,7 @@ Provide one or more of:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post Title - Mika Krooswijk</title>
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <article>

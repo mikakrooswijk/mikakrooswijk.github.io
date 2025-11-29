@@ -39,16 +39,31 @@ This is a **developer blog for Mika Krooswijk**, hosted at `mikakrooswijk.github
 
 ### HTML Structure
 
-- Standalone HTML files with inline or minimal external assets
-- No shared layout system - each page is self-contained
-- Example pattern from `index.html` and `posts/testpost.html`: Simple `<h1>` content structure
+- Standalone HTML files with shared CSS styling
+- **All pages must include the shared stylesheet**: `<link rel="stylesheet" href="style.css" />` (or `href="../style.css"` from `posts/` directory)
+- The site uses a consistent, minimal design with clean typography and code highlighting
+- Example pattern from `index.html` and `posts/testpost.html`
+
+### Styling
+
+- **Shared stylesheet**: `style.css` in the root directory
+- Applied styling includes:
+  - Centered content with 800px max-width
+  - System font stack for clean, native appearance
+  - Code blocks with syntax-friendly monospace font and light gray background
+  - Link styling in blue (#3498db) with hover underlines
+  - Semantic color scheme for headings and metadata
+- **Do not use inline styles** - link to `style.css` instead
 
 ### Creating New Content
 
 When adding pages:
 
 1. Create `.html` files in root (for top-level pages) or `posts/` (for blog content)
-2. Use full HTML document structure or minimal HTML as seen in existing files
+2. Include proper HTML5 document structure with:
+   - `<!DOCTYPE html>`, `<html lang="en">`, `<head>`, and `<body>` tags
+   - Meta charset and viewport tags
+   - Link to stylesheet: `<link rel="stylesheet" href="style.css" />` (root) or `<link rel="stylesheet" href="../style.css" />` (posts)
 3. No compilation needed - changes are live after commit/push
 
 ## Constraints & Considerations
